@@ -16,8 +16,14 @@ Para publicar no Cloudflare Pages:
 2) Envie o conteúdo deste diretório.
 3) Defina o domínio oratec.com.br.
 
-Ajustes recomendados antes de publicar:
-- trocar WhatsApp
-- confirmar e-mail oficial
-- inserir prints reais dos sistemas
-- se desejar, proteger a rota /_privado/ com Cloudflare Access
+Formulário de contato (/api/contact):
+- usa Pages Functions e a API Resend; envio para contato@oratec.com.br.
+- no Resend, verificar o domínio oratec.com.br e criar uma chave API de envio.
+- no projeto Pages, criar RESEND_API_KEY em Settings > Variables and Secrets,
+  como segredo criptografado para Production; refazer o deploy após configurar.
+- nunca salvar a chave API no GitHub.
+
+Antes de divulgar o site:
+- confirmar que contato@oratec.com.br está recebendo mensagens.
+- inserir prints reais dos sistemas quando disponíveis.
+- se desejar, proteger a rota /_privado/ com Cloudflare Access.

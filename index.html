@@ -11,9 +11,9 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="/" aria-label="ORATEC"><img src="/assets/img/logos/oratec-horizontal-branco.png" alt="ORATEC"></a>
-      <button class="mobile-toggle" aria-label="Abrir menu">Menu</button>
-      <nav class="menu">
+      <a href="/" aria-label="ORATEC"><img src="/assets/img/logos/oratec-horizontal-azul.png" alt="ORATEC"></a>
+      <button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">Menu</button>
+      <nav class="menu" id="main-menu">
         <a class="active" href="/">Início</a>
         <a href="/solucoes.html">Soluções</a>
         <a href="/produtos/ficha-flow.html">Ficha Flow</a>
@@ -134,13 +134,27 @@
         <div class="section-head">
           <div>
             <h2>Contato</h2>
-            <p class="lead">Deixe aqui seus canais finais antes da publicação: WhatsApp, e-mail comercial e formulário.</p>
+            <p class="lead">Conte o que você precisa. Nossa equipe responde pelo e-mail informado.</p>
           </div>
         </div>
-        <div class="grid-3">
-          <div class="card kv"><div><strong>WhatsApp</strong><span class="small">Substituir pelo número oficial da ORATEC</span></div></div>
-          <div class="card kv"><div><strong>E-mail</strong><span class="small">contato@oratec.com.br</span></div></div>
-          <div class="card kv"><div><strong>Atendimento</strong><span class="small">São Paulo, Brasil · atendimento remoto e projetos sob demanda</span></div></div>
+        <div class="contact-layout">
+          <div>
+            <p>Tem uma ideia para um sistema ou quer saber mais sobre nossos produtos? Escreva para a ORATEC.</p>
+            <div class="contact-links">
+              <div><strong>WhatsApp</strong><a href="https://wa.me/5511992039435" target="_blank" rel="noopener noreferrer">(11) 99203-9435</a></div>
+              <div><strong>E-mail</strong><a href="mailto:contato@oratec.com.br">contato@oratec.com.br</a></div>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form" action="/api/contact" method="post">
+            <div class="field"><label for="contact-name">Nome *</label><input id="contact-name" name="name" autocomplete="name" maxlength="100" required></div>
+            <div class="field"><label for="contact-email">E-mail *</label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+            <div class="field"><label for="contact-phone">Telefone</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></div>
+            <div class="field"><label for="contact-product">Produto *</label><select id="contact-product" name="product" required><option value="" selected disabled>Selecione</option><option>Zedaka</option><option>Ficha Flow</option><option>Outro</option></select></div>
+            <div class="field full"><label for="contact-topic">Assunto *</label><select id="contact-topic" name="topic" required><option value="" selected disabled>Selecione</option><option>Comercial</option><option>Financeiro</option><option>Dúvidas</option><option>Sugestões/Críticas</option></select></div>
+            <div class="field full"><label for="contact-message">Como podemos ajudar? *</label><textarea id="contact-message" name="message" minlength="10" maxlength="5000" placeholder="Conte o que você deseja fazer" required></textarea></div>
+            <div class="honeypot" aria-hidden="true"><label for="contact-website">Deixe em branco</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div class="form-actions"><button class="btn btn-primary" type="submit">Enviar mensagem</button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></div>
+          </form>
         </div>
       </div>
     </section>
@@ -157,8 +171,8 @@
         <div class="small"><a href="/">Início</a><br><a href="/solucoes.html">Soluções</a><br><a href="/produtos/ficha-flow.html">Ficha Flow</a><br><a href="/produtos/zedaka.html">Zedaka</a></div>
       </div>
       <div>
-        <strong>Observação</strong>
-        <div class="small">Site estático pronto para Cloudflare Pages e fácil de ajustar.</div>
+        <strong>Contato</strong>
+        <div class="small"><a href="mailto:contato@oratec.com.br">contato@oratec.com.br</a><br><a href="https://wa.me/5511992039435" target="_blank" rel="noopener noreferrer">(11) 99203-9435</a></div>
       </div>
     </div>
   </footer>
